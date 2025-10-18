@@ -1,0 +1,21 @@
+#Local Development
+#we can add additional services we need here as the app grows in size and complexity.
+services:
+  web:
+    build: .
+    ports:
+      - "5173:5173"
+    volumes:
+      - .:/app
+      - node_modules:/app/node_modules
+    environment:
+      NODE_ENV: development
+    stdin_open: true
+    tty: false
+    image: foodstuffscalc #name of the image we are running
+    container_name: foodstuffscalc-container
+    #this command should override the command in the dockerfile
+    command: npm run dev
+
+volumes:
+  node_modules:
