@@ -39,6 +39,7 @@ export function getApplicableDiscount({
   }
 
   //TODO
+  return 1;
 
   
 }
