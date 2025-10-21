@@ -1,0 +1,22 @@
+[
+  {
+    "Region": "AUK",
+    "TaxRate": "6.85%"
+  },
+  {
+    "Region": "WLG",
+    "TaxRate": "8.00%"
+  },
+  {
+    "Region": "WAI",
+    "TaxRate": "6.25%"
+  },
+  {
+    "Region": "CHC",
+    "TaxRate": "4.00%"
+  },
+  {
+    "Region": "TAS",
+    "TaxRate": "8.25%"
+  }
+]
