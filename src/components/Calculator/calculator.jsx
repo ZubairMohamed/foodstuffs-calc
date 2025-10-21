@@ -58,8 +58,10 @@ export default function Calculator() {
     });
   };
 
-  sortDiscountsByOrderValue();
-  getApplicableDiscount(sortDiscountsByOrderValue(), 30000);
+  getApplicableDiscount({
+    sortedArrayByOrderValue: sortDiscountsByOrderValue(),
+    totalPricePaidByCustomer: 60000,
+  });
 
   return (
     <>

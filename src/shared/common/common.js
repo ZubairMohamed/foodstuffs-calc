@@ -20,19 +20,16 @@ export function calculateTaxRate({
   pricePerItems: pricePerItems,
   taxRate: taxRate,
 }) {
-  console.log("quantity", quantity);
-  console.log("priceperitems", pricePerItems);
-  console.log("taxrate", taxRate);
   if (taxRate === undefined) {
     return;
   }
   return quantity * pricePerItems * (taxRate / 100);
 }
 
-export function getApplicableDiscount(
-  sortedArrayByOrderValue,
-  totalPricePaidByCustomer,
-) {
+export function getApplicableDiscount({
+  sortedArrayByOrderValue: sortedArrayByOrderValue,
+  totalPricePaidByCustomer: totalPricePaidByCustomer,
+}) {
   if (
     sortedArrayByOrderValue === undefined ||
     sortedArrayByOrderValue === null ||
@@ -41,14 +38,13 @@ export function getApplicableDiscount(
     return;
   }
 
-  for (let i = 0; i < sortedArrayByOrderValue.length; i++) {
-    console.log(
-      "what not",
-      sortDiscountsByOrderValue,
-      totalPricePaidByCustomer,
-    );
-  }
+  //TODO
+
+  
 }
+
+
+
 
 /**
  * This function takes in a dollar amount and converts it back to a number
@@ -60,16 +56,13 @@ export function convertCurrencyToNumber(currencyAmount) {
 }
 
 /**
- * This function uses the data contained in the tax rates by region json file and sorts the data based on the order value
+ * This function uses the data contained in the discount rates json file and sorts the data based on the order value
  */
 export function sortDiscountsByOrderValue() {
-  console.log(
-    "sorted values: ",
-    discountRates.sort((a, b) => {
-      const convertedValue = (val) =>
-        typeof val === "number" ? val : parseFloat(val);
-
-      return convertedValue(a.OrderValue) - convertedValue(b.OrderValue);
-    }),
-  );
+  return discountRates.sort((a, b) => {
+    const convertedValueA = convertCurrencyToNumber(a.OrderValue);
+    const convertedValueB = convertCurrencyToNumber(b.OrderValue);
+    
+    return convertedValueA - convertedValueB;
+  });
 }
