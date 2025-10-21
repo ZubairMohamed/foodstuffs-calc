@@ -2,6 +2,9 @@
 
 This app uses vite + React.
 
+# Live Site
+This project has been deployed live on netlify: https://foodstuffs-calc.netlify.app/
+
 # Running the app
 
 This app works uses node package manager (npm). To run the app locally you can run npm run dev or npm start.
@@ -51,3 +54,10 @@ The React Compiler is not enabled on this template because of its impact on dev 
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+## Assumptions
+1. The project does not talk about the UI. Given less project constraints I would have opted to beautify the UI in addition to making it functional 
+2. Moreover, no UI has been provided so we are not aiming to match the user interface with a design. 
+3. A purchase receives a discount if it is greater than or equal to x and less than y. x is order amount and y is the next pricing tier.
+4. A purchase receives 0 discount if it is lower than the first pricing tier x.
+5. No external backend api was used and instead JSON files were used to simulate pulling data from external sources.
